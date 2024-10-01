@@ -9,4 +9,5 @@ The current repository contains implementations in the following:
 
 - C++: c++_nn.cpp
 - JavaScript: javascript_nn.js
+- Java: java_nn.java
 - Python: python_nn.py
