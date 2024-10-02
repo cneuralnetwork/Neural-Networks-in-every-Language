@@ -3,13 +3,15 @@ This project demonstrates the implementation of basic neural networks in multipl
 
 ### Languages Available
 
-- [C++](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/C%2B%2B)
 - [C](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/C)
+- [C++](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/C%2B%2B)
+- [Go](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Go)
 - [Java](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Java)
 - [Javascript](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Javascript)
 - [Python](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Python)
 - [R](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/R)
 - [Rust](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Rust)
+- [Typescript](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Typescript)
 
 ### How to contribute
 - Fork this repository
