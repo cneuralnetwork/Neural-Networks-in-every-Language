@@ -1,5 +1,5 @@
 # Neural Network In Bash
 
-for anyone wandering for the ouput 
+for anyone wondering what the output is
 
 ![bash](./bash.png)
