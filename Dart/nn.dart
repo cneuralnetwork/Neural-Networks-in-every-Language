@@ -96,7 +96,8 @@ class NeuralNetwork {
   double learningRate;
   late Matrix weightsIH, weightsHO, biasH, biasO;
 
-  NeuralNetwork(this.inputSize, this.hiddenSize, this.outputSize, this.learningRate) {
+  NeuralNetwork(
+      this.inputSize, this.hiddenSize, this.outputSize, this.learningRate) {
     weightsIH = Matrix(hiddenSize, inputSize);
     weightsHO = Matrix(outputSize, hiddenSize);
     biasH = Matrix(hiddenSize, 1);
@@ -138,7 +139,8 @@ class NeuralNetwork {
 
     Matrix gradientsO = Matrix(outputSize, 1);
     for (int i = 0; i < outputSize; i++) {
-      gradientsO.data[i][0] = outputErrors.data[i][0] * sigmoidDerivative(outputs.data[i][0]);
+      gradientsO.data[i][0] =
+          outputErrors.data[i][0] * sigmoidDerivative(outputs.data[i][0]);
     }
     gradientsO.multiplyScalar(learningRate);
 
@@ -148,7 +150,8 @@ class NeuralNetwork {
 
     Matrix gradientsH = Matrix(hiddenSize, 1);
     for (int i = 0; i < hiddenSize; i++) {
-      gradientsH.data[i][0] = hiddenErrors.data[i][0] * sigmoidDerivative(hidden.data[i][0]);
+      gradientsH.data[i][0] =
+          hiddenErrors.data[i][0] * sigmoidDerivative(hidden.data[i][0]);
     }
     gradientsH.multiplyScalar(learningRate);
 
@@ -189,6 +192,7 @@ void main() {
   print('Testing XOR outputs:');
   for (List<double> input in xorInputs) {
     Matrix result = nn.forward(input)[0];
-    print('Input: ${input[0]} ${input[1]}, Output: ${result.data[0][0].toStringAsFixed(4)}');
+    print(
+        'Input: ${input[0]} ${input[1]}, Output: ${result.data[0][0].toStringAsFixed(4)}');
   }
 }
