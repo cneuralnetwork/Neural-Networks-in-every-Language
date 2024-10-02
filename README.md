@@ -9,3 +9,9 @@ This project demonstrates the implementation of basic neural networks in multipl
 - [Python](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Python)
 - [R](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/R)
 - [Rust](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Rust)
+
+### How to contribute
+- Fork this repository
+- Make a **FOLDER** naming your language (for eg. `C` for NN in C)
+- Add your files in that folder
+- Pull request
