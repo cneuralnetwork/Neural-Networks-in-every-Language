@@ -3,6 +3,7 @@ This project demonstrates the implementation of basic neural networks in multipl
 
 ### Languages Available
 
+- [Bash](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Bash)
 - [C](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/C)
 - [C++](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/C%2B%2B)
 - [Dart](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Dart)
