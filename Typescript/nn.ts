@@ -99,7 +99,7 @@ async function testNN() {
     const w2 = tf.randomUniform([10, 10], -0.5, 0.5);
     const b2 = tf.randomUniform([10, 1], -0.5, 0.5);
 
-    const X_train = tf.randomUniform([784, 1000]);  // Simulate 1000 training samples
+    const X_train = tf.randomUniform([784, 1000]);
     const Y_train = tf.oneHot(tf.tensor1d([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 'int32'), 10).tile([100, 1]);
 
     const { z1, a1, z2, a2 } = forwardProp(w1, b1, w2, b2, X_train);
