@@ -94,15 +94,15 @@ main();
 /*import * as tf from '@tensorflow/tfjs';
 
 async function testNN() {
-    coconst w1 = tf.randomUniform([10, 784], -0.5, 0.5);
-    coconst b1 = tf.randomUniform([10, 1], -0.5, 0.5);
-    coconst w2 = tf.randomUniform([10, 10], -0.5, 0.5);
-    coconst b2 = tf.randomUniform([10, 1], -0.5, 0.5);
+    const w1 = tf.randomUniform([10, 784], -0.5, 0.5);
+    const b1 = tf.randomUniform([10, 1], -0.5, 0.5);
+    const w2 = tf.randomUniform([10, 10], -0.5, 0.5);
+    const b2 = tf.randomUniform([10, 1], -0.5, 0.5);
 
-    coconst X_train = tf.randomUniform([784, 1000]);
-    coconst Y_train = tf.oneHot(tf.tensor1d([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 'int32'), 10).tile([100, 1]);
+    const X_train = tf.randomUniform([784, 1000]);
+    const Y_train = tf.oneHot(tf.tensor1d([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 'int32'), 10).tile([100, 1]);
 
-    coconst { z1, a1, z2, a2 } = forwardProp(w1, b1, w2, b2, X_train);
+    const { z1, a1, z2, a2 } = forwardProp(w1, b1, w2, b2, X_train);
     console.log("Forward Propagation successful");
 }
 
