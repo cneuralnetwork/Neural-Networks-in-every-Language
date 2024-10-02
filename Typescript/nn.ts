@@ -5,19 +5,19 @@ function initParams() {
   nst b1 = tf.randomUniform([10, 1], -0.5, 0.5);
   nst w2 = tf.randomUniform([10, 10], -0.5, 0.5);
   nst b2 = tf.randomUniform([10, 1], -0.5, 0.5);
-  turn { w1, b1, w2, b2 };
+  return { w1, b1, w2, b2 };
 }
 
 function ReLU(z: tf.Tensor) {
-  turn z.relu();
+  return z.relu();
 }
 
 function softmax(z: tf.Tensor) {
-  turn z.softmax();
+  return z.softmax();
 }
 
 function oneHot(y: number[], numClasses: number): tf.Tensor {
-  turn tf.oneHot(tf.tensor1d(y, 'int32'), numClasses);
+  return tf.oneHot(tf.tensor1d(y, 'int32'), numClasses);
 }
 
 function forwardProp(w1: tf.Tensor, b1: tf.Tensor, w2: tf.Tensor, b2: tf.Tensor, x: tf.Tensor) {
@@ -25,7 +25,7 @@ function forwardProp(w1: tf.Tensor, b1: tf.Tensor, w2: tf.Tensor, b2: tf.Tensor,
   nst a1 = ReLU(z1);
   nst z2 = w2.matMul(a1).add(b2);
   nst a2 = softmax(z2);
-  turn { z1, a1, z2, a2 };
+  return { z1, a1, z2, a2 };
 }
 
 function backProp(z1: tf.Tensor, a1: tf.Tensor, a2: tf.Tensor, w2: tf.Tensor, x: tf.Tensor, y: tf.Tensor) {
@@ -36,7 +36,7 @@ function backProp(z1: tf.Tensor, a1: tf.Tensor, a2: tf.Tensor, w2: tf.Tensor, x:
   nst dz1 = w2.transpose().matMul(dz2).mul(z1.greater(0));
   nst dw1 = dz1.matMul(x.transpose()).div(m);
   nst db1 = dz1.sum(1).reshape([10, 1]).div(m);
-  turn { dw1, db1, dw2, db2 };
+  return { dw1, db1, dw2, db2 };
 }
 
 function updateParams(w1: tf.Tensor, b1: tf.Tensor, w2: tf.Tensor, b2: tf.Tensor, dw1: tf.Tensor, db1: tf.Tensor, dw2: tf.Tensor, db2: tf.Tensor, alpha: number) {
@@ -44,15 +44,15 @@ function updateParams(w1: tf.Tensor, b1: tf.Tensor, w2: tf.Tensor, b2: tf.Tensor
    = b1.sub(db1.mul(alpha));
    = w2.sub(dw2.mul(alpha));
    = b2.sub(db2.mul(alpha));
-  turn { w1, b1, w2, b2 };
+  return { w1, b1, w2, b2 };
 }
 
 function getPredictions(a2: tf.Tensor) {
-  turn a2.argMax(0);
+  return a2.argMax(0);
 }
 
 function getAccuracy(predictions: tf.Tensor, y: tf.Tensor) {
-  turn predictions.equal(y.argMax(0)).sum().div(y.shape[1]).arraySync();
+  return predictions.equal(y.argMax(0)).sum().div(y.shape[1]).arraySync();
 }
 
 async function gradientDescent(X: tf.Tensor, Y: tf.Tensor, iterations: number, alpha: number) {
@@ -69,12 +69,12 @@ async function gradientDescent(X: tf.Tensor, Y: tf.Tensor, iterations: number, a
       e.log(`Iteration ${i}, Accuracy: ${accuracy}`);
     
   
-  turn { w1, b1, w2, b2 };
+  return { w1, b1, w2, b2 };
 }
 
 function makePredictions(X: tf.Tensor, w1: tf.Tensor, b1: tf.Tensor, w2: tf.Tensor, b2: tf.Tensor) {
   nst { a2 } = forwardProp(w1, b1, w2, b2, X);
-  turn getPredictions(a2);
+  return getPredictions(a2);
 }
 
 async function main() {
