@@ -1,15 +1,31 @@
+#include <cstddef>
 #include <iostream>
+#include <numeric>
 #include <vector>
 #include <cmath>
 
 // Activation function (sigmoid)
-double sigmoid(double x) {
+double sigmoid(const double &x) {
     return 1 / (1 + std::exp(-x));
 }
 
 // Derivative of sigmoid
-double sigmoid_derivative(double x) {
+double sigmoid_derivative(const double &x) {
     return x * (1 - x);
+}
+
+// Softmax function for turning output vector in probabilities
+// Mostly used in multiclass classification problems
+std::vector<double> softmax(const std::vector<double> &z) {
+    std::vector<double> softmax_vector(z.size());
+    for (std::size_t i = 0; i < z.size(); i++) {
+        softmax_vector[i] = std::exp(z[i]);
+    }
+    double denominator = std::accumulate(softmax_vector.begin(), softmax_vector.end(), 0); 
+    for (std::size_t i = 0;  i < z.size(); i++) {
+        softmax_vector[i] = softmax_vector[i] / denominator; // makes each value less than 1, and sum of all values equal to 1
+    }
+    return softmax_vector;
 }
 
 int main() {
