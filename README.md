@@ -10,6 +10,7 @@ This project demonstrates the implementation of basic neural networks in multipl
 - [Go](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Go)
 - [Java](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Java)
 - [Javascript](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Javascript)
+- [Julia](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Julia)
 - [Python](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Python)
 - [R](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/R)
 - [Rust](https://github.com/cneuralnetwork/Neural-Networks-in-every-Language/tree/main/Rust)
