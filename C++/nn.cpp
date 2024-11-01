@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <cstddef>
 #include <iostream>
 #include <numeric>
@@ -13,6 +14,24 @@ double sigmoid(const double &x) {
 double sigmoid_derivative(const double &x) {
     return x * (1 - x);
 }
+
+double tanh(const double &x) {
+    return (std::exp(x) - std::exp(-x)) / (std::exp(x) + std::exp(-x));
+}
+
+double tanh_derivative(const double &x) {
+    return 4 / (std::pow((std::exp(x) + std::exp(-x)), 2));
+}
+
+double ReLU(const double &x) {
+    return std::max(x, (double) 0);
+}
+
+double ReLU_derivative(const double &x) {
+    if (x < 0) return 0;
+    return 1;
+}
+
 
 // Softmax function for turning output vector in probabilities
 // Mostly used in multiclass classification problems
